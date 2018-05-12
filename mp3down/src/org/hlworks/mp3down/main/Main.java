@@ -8,7 +8,6 @@ public class Main {
         String urlstr;
         String pathstr;
         String filestr;
-        int bytesum = 0;
         int byteread;
         System.out.print("Input MP3 URL: ");
         InputStreamReader is = new InputStreamReader(System.in);
@@ -42,7 +41,6 @@ public class Main {
             FileOutputStream out = new FileOutputStream(file);
             byte[] buffer = new byte[1024];
             while ((byteread = in.read(buffer)) != -1) {
-                bytesum += byteread;
                 out.write(buffer, 0, byteread);
             }
         } catch (MalformedURLException e) {
